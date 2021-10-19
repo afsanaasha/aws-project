@@ -12,6 +12,7 @@ Objectives:
 
 
 Approach:
+
 Step 1: amazon-review-json-to-csv.ipynb
         To convert JSON data (Magagine_Subscription.json) to CSV in Local Jupyter Notebook
         
