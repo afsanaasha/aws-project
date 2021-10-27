@@ -22,4 +22,4 @@ Step 2: AWS S3: Magagine_Subscription.csv
         Upload the CSV file from local to AWS S3 bucket
         
 Step 3: AWS Sagemaker: Checkpoint_1.ipynb
-        Load S3 data in AWS Sagemaker Studio Notebook using boto3 library
+        Load S3 data in AWS Sagemaker Studio Notebook using boto3 and io library
