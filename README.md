@@ -1,4 +1,4 @@
-# aws-project
+# cloud-project
 
 Data Source: http://deepyeti.ucsd.edu/jianmo/amazon/
 
@@ -11,7 +11,9 @@ Objectives:
 
 
 
-Approach:
+AWS Approach:
+
+1) Sagemaker Solution
 
 Step 1: amazon-review-json-to-csv.ipynb
         To convert JSON data (Magagine_Subscription.json) to CSV in Local Jupyter Notebook
