@@ -17,12 +17,14 @@ AWS Approach:
 
 Step 1: S3: Magazine_Subscription.json
             Upload the JSON data in AWS S3 bucket
+            
 Step 2: AWS Glue: aws_glue_pyspark_flatten_json.ipynb
         Create and run Crawler to add Database and Table
         Create IAM AWSGlueServiceRole and attach AmazonS3FullAcessPolicy to the role
         Create Devendpoint using the IAM Role
         Create Pyspark Notebook using the devendpoint
         Execute the codes and save the flatten output data in S3 bucket
+        
 Step 3: AWS Athena: aws_atherna_queries_checkpoint1.sql
         Manage the settings to save the output queries in S3
         In query editor create the schema using the database in AWSGlueCatalog
