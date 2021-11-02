@@ -46,7 +46,7 @@ Step 3: AWS Athena: aws_atherna_queries_checkpoint1.sql
 
 2) Sagemaker Solution
 
-Step 1: aws_sagemaker_jupyter_json-to-csv.ipynb
+Step 1: amazon-review-json-to-csv.ipynb
 
         To convert JSON data (Magazine_Subscription.json) to CSV in Local Jupyter Notebook
         
@@ -54,7 +54,7 @@ Step 2: S3: Magagine_Subscription.csv
 
         Upload the CSV file from local to AWS S3 bucket
         
-Step 3: AWS Sagemaker: aws_sagemaker_checkpoint1_aasha.ipynb
+Step 3: AWS Sagemaker: Checkpoint_1.ipynb
 
         Load S3 data in AWS Sagemaker Studio Notebook using boto3 and io library
         
