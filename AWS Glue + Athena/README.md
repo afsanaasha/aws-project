@@ -13,7 +13,7 @@ Objective 1. Load into the Cloud either product JSON (called &quot;metadata&quot
 
 I chose review data for &quot;Magazine\_Subscriptions.json&quot; and my bucket path is s3://afsana where I loaded the json data
 
-![](RackMultipart20211103-4-zdfe80_html_370964f5dcf30ef7.png)
+(![image](https://user-images.githubusercontent.com/73313035/140012138-3acce59c-8031-493a-a19e-4c5c4e0b70c5.png)
 
 **Step 2:** Create a crawler in AWS Glue.
 
