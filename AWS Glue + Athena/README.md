@@ -20,7 +20,7 @@ I chose review data for &quot;Magazine\_Subscriptions.json&quot; and my bucket p
 
 Go to AWS Glue console. Glue is an ETL service where we will use crawler to create table. From the Data Catalog section click on &quot;Crawlers&quot;. This will take into a page that says &quot;you do not have any crawlers yet&quot;. Click on &quot;Add a crawler&quot;.
 
-![image](https://user-images.githubusercontent.com/73313035/140012216-018c104b-8177-45c2-aaab-2cf4d5ccee8c.png) ![image](https://user-images.githubusercontent.com/73313035/140012242-85e76aa9-de0a-4969-b862-7c2aee707a8e.png)
+![image](https://user-images.githubusercontent.com/73313035/140012216-018c104b-8177-45c2-aaab-2cf4d5ccee8c.png) ![image](https://user-images.githubusercontent.com/73313035/140013335-3d9cc683-11e1-4203-8164-e350c560b350.png)
 
 
 Give it a name in the Crawler name field. I named it as &quot;review\_crawler&quot;. Extending the arrow, we can also provide tag, description and security configuration. Tags will help us to categorized resources. Since they are optional, I kept this section empty.
