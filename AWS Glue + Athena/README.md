@@ -7,16 +7,16 @@ Data Source: http://deepyeti.ucsd.edu/jianmo/amazon/
 
 Category choosen: Magagize Subscription
 
-**Objective 1. Load into the Cloud either product JSON (called &quot;metadata&quot; on the source github) or review JSON from at least one category of Amazon data.
+**Objective 1. Load into the Cloud either product JSON (called &quot;metadata&quot; on the source github) or review JSON from at least one category of Amazon data.**
 
-**Step 1: Upload the amazon JSON data in S3 bucket.
+**Step 1: Upload the amazon JSON data in S3 bucket.**
 
 I chose review data for &quot;Magazine\_Subscriptions.json&quot; and my bucket path is s3://afsana where I loaded the json data
 
 (![image](https://user-images.githubusercontent.com/73313035/140012138-3acce59c-8031-493a-a19e-4c5c4e0b70c5.png)
 
 
-**Step 2: Create a crawler in AWS Glue.
+**Step 2: Create a crawler in AWS Glue.**
 
 Go to AWS Glue console. Glue is an ETL service where we will use crawler to create table. From the Data Catalog section click on &quot;Crawlers&quot;. This will take into a page that says &quot;you do not have any crawlers yet&quot;. Click on &quot;Add a crawler&quot;.
 
@@ -78,7 +78,7 @@ Review the options we have chosen. Click &quot;Finish&quot;.
 ![image](https://user-images.githubusercontent.com/73313035/140012480-a9bab68c-339e-4b2a-9cf6-e19a7084c4a2.png)
 
 
-**Step 3: Run the crawler and create the table &quot;mags\_sub&quot;.
+**Step 3: Run the crawler and create the table &quot;mags\_sub&quot;.**
 
 Crawler is created. This can take a few minutes. Using the refresh icon, we can check the status. When it is &quot;Ready&quot;, it will give us a message as &quot;Crawler review\_crawler was created to run on demand&quot; at the top. We can click &quot;Run it now?&quot; otherwise we can select the crawler and &quot;Run crawler&quot;. This attempts to run the crawler.
 
@@ -129,7 +129,7 @@ If we check the schema, we will see the data is not in the right format yet, hen
 ![image](https://user-images.githubusercontent.com/73313035/140012662-f52fa912-aa46-4a78-9f60-ba30f9f2562f.png)
 
 
-**Step 4: IAM Configuration.
+**Step 4: IAM Configuration.**
 
 Reference: https://docs.aws.amazon.com/glue/latest/dg/create-an-iam-role.html
 
@@ -155,7 +155,7 @@ We already have the AWSGlueServiceRole from the crawler creation.
 ![image](https://user-images.githubusercontent.com/73313035/140012709-7f34ca5f-42a7-4bc7-9156-3fb8dfbdcf77.png)
 
 
-**Step 5: Set up a Dev endpoints &quot;asha\_json\_transform&quot;
+**Step 5: Set up a Dev endpoints &quot;asha\_json\_transform&quot;**
 
 AWS offers Dev endpoint where we can create code in IDE. This actually works with PyCharm professional or notebooks servers (Zeppelin or Sagemaker). Dev endpoints allows us to integrate our IDE or notebook directly into Glue. The endpoints are costly though. Make sure to delete the endpoint after the work is done.
 
@@ -192,7 +192,7 @@ Wait till the provision status turns &quot;Ready&quot;. This may take10-15 minut
 ![image](https://user-images.githubusercontent.com/73313035/140012794-43f1616e-5fba-4fa1-b463-1d7115e859e9.png)
 
 
-**Step 6: Create a notebook using the endpoint
+**Step 6: Create a notebook using the endpoint.**
 
 Once the endpoint is ready, click &quot;Notebooks&quot; from the &quot;ETL Section&quot;. Click &quot;Create notebook&quot;.
 
@@ -219,12 +219,12 @@ Once ready. Click on the notebook. Click the &quot;Open&quot; tab. This will ope
 ![image](https://user-images.githubusercontent.com/73313035/140012880-543699c8-7155-42b8-b75e-d7955334d9b5.png)
 
 
-**Step 7: Use Pyspark Kernel in a new notebook. Click &quot;New&quot;. Select the Sparkmagic pyspark kernel.
+**Step 7: Use Pyspark Kernel in a new notebook. Click &quot;New&quot;. Select the Sparkmagic pyspark kernel.**
 
 ![image](https://user-images.githubusercontent.com/73313035/140012895-a60e1256-b763-47bf-9d88-1839f5089658.png)
 
 
-**Step 8: Write and execute the codes and save the flattened output JSON data in S3 bucket.
+**Step 8: Write and execute the codes and save the flattened output JSON data in S3 bucket.**
 
 I have included the codes and markdowns in &quot;aws-glue-pyspark\_flatten\_json.ipynb&quot; which is available in github. I have used AWS Glue Relationalize Transform to handle the nested JSON.
 
@@ -233,9 +233,9 @@ Reference link: https://aws.amazon.com/blogs/big-data/simplify-querying-nested-j
 ![image](https://user-images.githubusercontent.com/73313035/140012909-931214cb-0de1-4064-8b57-df6be3c47919.png)
 
 
-**Objective 2. Perform one or more queries (or other actions!) over your data set _ **in the cloud** _.
+**Objective 2. Perform one or more queries (or other actions!) over your data set _ *in the cloud* _.**
 
-**Step 9: Configure Athena
+**Step 9: Configure Athena**
 
 Got to Amazon Athena console. Click &quot;Explore the query editor&quot;.
 
@@ -277,13 +277,14 @@ Click &quot;Save&quot;.
 ![image](https://user-images.githubusercontent.com/73313035/140013043-672a46d3-e39e-4fd5-9844-80a5c01fd00a.png)
 
 
-**Step 10: Create a Hive table by executing queries in AWS Athena
+**Step 10: Create a Hive table by executing queries in AWS Athena.**
 
 Go back to the &quot;Editor&quot;. Select &quot;AWSDataCatalog&quot; as Data Source. Use any database. I have used a new database called &quot;review&quot;. Using + icon open a Query tab. Run the Create Table statement shared in &quot;aws\_athena\_queries\_checkpoint1.sql&quot;. Once completed this will create the table mags\_sub, which we can expand using the (+) icon. We will now see the expected data format is there for each of the columns. We can also observe the Time in queue and Run time. The query is executed within seconds. This query saves the output is one of the columnar file formats Optimized Row Columnar (ORC) format which prevails an efficient way to store data in Hive and to improve query performance while dealing with big data.
 
 ![image](https://user-images.githubusercontent.com/73313035/140013071-95df8d79-a286-4b3c-b83b-cefafb23b212.png)
 
 
+**Step 11: Perform queries using the table created**
 Run the second query shared in &quot;aws\_athena\_queries\_checkpoint1.sql&quot;, which is a simple GROUP BY COUNT statement. The query has been executed in less than a second. The result output rows the number of reviews for each overall magazine subscriptions ratings. For example, total of 53790 records have overall 5.0 stars for magazine subscription category in Amazon.
 
 ![image](https://user-images.githubusercontent.com/73313035/140013085-d7a2c09f-be49-4654-9882-46c615ab503f.png)
