@@ -4,7 +4,7 @@ DSBA 6190 Checkpoint #1 Student Name: Afsana Akther Asha
 
 Data Source: http://deepyeti.ucsd.edu/jianmo/amazon/
 
-Category choosen: Magagize Subscription
+Category choosen: Magagize Subscription Review data
 
 **Objective 1. Load into the Cloud either product JSON (called &quot;metadata&quot; on the source github) or review JSON from at least one category of Amazon data.**
 
