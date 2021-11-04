@@ -1,11 +1,10 @@
 # cloud-project
 
-Checkpoint#1
 DSBA 6190 Checkpoint #1 Student Name: Afsana Akther Asha
 
 Data Source: http://deepyeti.ucsd.edu/jianmo/amazon/
 
-Category choosen: Magagize Subscription review data
+Category choosen: Magagize Subscription Review data
 
 **Objective 1. Load into the Cloud either product JSON (called &quot;metadata&quot; on the source github) or review JSON from at least one category of Amazon data.**
 
@@ -79,6 +78,8 @@ We can now see the correct table schema loaded from the JSON file.
 
 ![image](https://user-images.githubusercontent.com/73313035/140255048-5fd637b2-c0fa-4ba2-9be8-e58f187ea831.png)
 
+
+**Objective 2. Perform one or more queries (or other actions!) over your data set _ *in the cloud* _.**
 
 **Step 3: Executing queries.**
 
