@@ -1,6 +1,5 @@
 # cloud-project
 
-Checkpoint#1
 DSBA 6190 Checkpoint #1 Student Name: Afsana Akther Asha
 
 Data Source: http://deepyeti.ucsd.edu/jianmo/amazon/
