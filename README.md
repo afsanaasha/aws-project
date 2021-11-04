@@ -61,3 +61,15 @@ Step 3: AWS Sagemaker: Checkpoint_1.ipynb
         
         
 GCP Approach:
+
+Step 1: BigQuery SQL workspace
+
+        Create a Dataset
+
+Step 3: gcp_bigquery_json_schema.json
+
+        Create Table and specify schema
+
+Step 3: gcp_bigquery_queries.sql
+
+        Execute Queries
