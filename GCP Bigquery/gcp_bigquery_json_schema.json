@@ -1,0 +1,91 @@
+[
+  {
+    "description": "overall",
+		"mode": "NULLABLE",
+		"name": "overall",
+		"type": "FLOAT"
+  },
+	{
+    "description": "vote",
+		"mode": "NULLABLE",
+		"name":	"vote",
+		"type": "INTEGER"
+  },
+	{
+    "description": "verified",
+		"mode": "NULLABLE",
+		"name":	"verified",
+		"type": "BOOLEAN"
+  },
+  {
+    "description": "image",
+	  "mode": "REPEATED",
+    "name":	"image",
+    "type": "STRING"
+  },
+	{
+    "description": "reviewTime",
+		"mode": "NULLABLE",
+		"name":	"reviewTime",
+		"type": "STRING"
+  },
+	{
+    "description": "reviewerID",
+		"mode": "NULLABLE",
+		"name":	"reviewerID",
+		"type": "STRING"
+  },
+	{
+    "description": "asin",
+		"mode": "NULLABLE",
+		"name":	"asin",
+		"type": "STRING"
+  },
+  {
+    "description": "style",
+		"mode": "NULLABLE",
+		"name":	"style",
+		"type": "RECORD",
+		"fields":
+      [
+        {
+          "name": "Format",
+					"type": "STRING",
+					"mode": "NULLABLE"
+				},
+        {
+          "name": "Size",
+					"type": "STRING",
+					"mode": "NULLABLE"
+				},
+				{
+          "name": "Color",
+					"type": "STRING",
+					"mode": "NULLABLE"
+				}
+      ]
+  },
+	{
+    "description": "reviewerName",
+		"mode": "NULLABLE",
+		"name":	"reviewerName",
+		"type": "STRING"
+  },
+	{
+    "description": "reviewText",
+		"mode": "NULLABLE",
+		"name":	"reviewText",
+		"type": "STRING"
+  },
+	{
+    "description": "summary",
+		"mode": "NULLABLE",
+		"name":	"summary",
+		"type": "STRING"
+  },
+	{"description": "unixReviewTime",
+		"mode": "NULLABLE",
+		"name":	"unixReviewTime",
+		"type": "INTEGER"}
+
+]
