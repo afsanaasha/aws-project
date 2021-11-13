@@ -61,7 +61,10 @@ Step 3: AWS Sagemaker: Checkpoint_1.ipynb
         
         
 GCP Approach:
+<<<<<<< HEAD
 
+=======
+>>>>>>> checkpoint1
 Step 1: BigQuery SQL workspace
 
         Create a Dataset
